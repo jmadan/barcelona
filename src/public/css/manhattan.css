@@ -1,0 +1,17 @@
+.interest-grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-figure {
+    flex-basis: calc(33.3% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 0 2rem 2rem 2rem;
+    padding: 2rem;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.03);
+    position: relative;
+}
