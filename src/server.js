@@ -12,7 +12,7 @@ let app = express();
 
 // app.use(webpackDevMiddleware(compiler, {
 //     noInfo: true,
-//     lazy: true,
+//     lazy: false,
 //     quite: false,
 //     publicPath: config.output.publicPath,
 //     stats: {
@@ -24,7 +24,7 @@ let app = express();
 //     log: console.log
 // }));
 
-app.use('/', express.static('dist'));
+app.use('/', express.static('build/'));
 
 app.use(bodyParser.json());
 
@@ -46,7 +46,7 @@ app.use(function (req, res, next) {
 app.get('/', (req, res) => {
     // res.render('index');
     var options = {
-        root: path.join(__dirname, '../src/public/html/'),
+        root: path.join(__dirname, './public/html'),
         dotfiles: 'deny',
         headers: {
             'x-timestamp': Date.now(),

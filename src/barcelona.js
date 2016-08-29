@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
 import {
     Router,
     Route,
@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 
 import store, { history } from './store';
 
-require('./public/css/manhattan.css');
+require('./public/css/bootstrap.css');
 
 import App from './components/connect';
 import Home from './components/home';
@@ -31,6 +31,7 @@ let router = (
 			</Route>
 		</Router>
 	</Provider>
-)
+);
 
-ReactDom.render(router, document.getElementById('root'));
+
+render(router, document.getElementById('root'));
