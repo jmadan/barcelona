@@ -7,10 +7,6 @@ class NewsContainer extends React.Component {
         this.state = { news: [] }
     }
 
-    componentDidMount() {
-
-    }
-
     render() {
         return (<NewsFeed news={this.state.news}/>);
     }

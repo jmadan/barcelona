@@ -3,7 +3,7 @@ import React from 'react';
 import NavBar from './nav';
 import Footer from './footer';
 
-export default class Main extends React.Component {
+class Main extends React.Component {
     render() {
         return (
             <div>
@@ -19,3 +19,5 @@ export default class Main extends React.Component {
         );
     }
 }
+
+export default Main;

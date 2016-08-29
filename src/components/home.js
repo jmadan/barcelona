@@ -6,7 +6,8 @@ import {
 export default class Home extends React.Component {
     render() {
         return (
-            <div><div className="well text-center">
+            <div>
+            <div className="well text-center">
         	<h1>Welcome to Manhattan</h1>
         	<p>We don't have the feed ready for you yet.</p>
         	<p>Please check back later</p>
