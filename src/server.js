@@ -1,6 +1,8 @@
 let express = require('express');
 let path = require('path');
 let bodyParser = require('body-parser');
+let apiHandler = require('./handlers/apiroute');
+// let compression = require('compression');
 // let webpack = require('webpack');
 // let config = require('../webpack.config.js');
 
@@ -8,6 +10,7 @@ let bodyParser = require('body-parser');
 // let webpackHotMiddleware = require('webpack-hot-middleware');
 
 let app = express();
+// app.use(compression());
 // let compiler = webpack(config);
 
 // app.use(webpackDevMiddleware(compiler, {
@@ -37,7 +40,7 @@ app.use(function (req, res, next) {
     // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
 
-    // Disable caching so we'll always get the latest comments.
+    // Disable caching so we'll always get the latest.
     res.setHeader('Cache-Control', 'no-cache');
     console.log("***********request: ", req.url);
     next();
@@ -55,6 +58,8 @@ app.get('/', (req, res) => {
     };
     res.sendFile('index.html', options);
 });
+
+app.use('/api', apiHandler);
 
 let PORT = process.env.PORT || 8080;
 server = app.listen(PORT, 'localhost', function (err) {
