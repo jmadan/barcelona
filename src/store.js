@@ -2,9 +2,11 @@ import {
     createStore,
     compose
 } from 'redux';
+
 import {
     syncHistoryWithStore
 } from 'react-router-redux';
+
 import {
     browserHistory
 } from 'react-router';
@@ -17,35 +19,40 @@ const interests = ['Arts', 'Lifestyle', 'Business', 'People', 'Sports', 'Music',
     'Backpacking', 'Start-ups', 'Enterpreneurship', 'Enterprise', 'Sciences'
 ];
 
-const user = {
+const User = {
     name: "Guest",
-    email: "",
-    selectedInterests: []
+    email: ""
 };
 
-const newsFeed = [{
+const InterestedIn = [];
+const LikeableStories = [];
+
+const Feed = [{
     "storyId": "12127761",
     "title": "Office Chat, Task Management, Video Chat Without Integrating Across Platforms",
     "url": "https://blog.hibox.co/business-chat-is-dead-we-fixed-it-introducing-hibox-87fb5dbb4840#.eti0qmx01",
     "storyType": "story",
     "score": 1,
-    "category": "Productivity,Remote Working,Startup,Tech,Future Of Work"
+    "category": ["Productivity", "Remote Working", "Startup", "Tech", "Future Of Work"]
 }, {
     "storyId": "12127198",
     "title": "Uber faces UK court battle with drivers over employment status",
     "url": "https://www.theguardian.com/technology/2016/jul/19/uber-drivers-court-tribunal-self-employed-uk-employment-law",
     "storyType": "story",
-    "score": 3
+    "score": 3,
+    "category": ["Productivity", "Remote Working", "Startup", "Tech", "Future Of Work"]
 }];
 
 
 const defaultState = {
-    interests,
-    user,
-    newsFeed
+    Feed,
+    User,
+    InterestedIn,
+    LikeableStories
 };
 
 const store = createStore(rootReducer, defaultState);
+console.log('Store Created**************');
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
