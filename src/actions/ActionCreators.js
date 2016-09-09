@@ -16,11 +16,17 @@ export function deSelectInterest(topic) {
 }
 
 //Like a story
+export function likeAStory(storyId) {
+    return {
+        type: 'LIKE_THIS',
+        storyId
+    }
+}
 
 //dislike a story
-
-//save a story
-
-//retweet a story
-
-//
+export function dislikeAStory(storyId) {
+    return {
+        type: 'DISLIKE_THIS',
+        storyId
+    }
+}
