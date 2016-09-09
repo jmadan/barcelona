@@ -6,9 +6,10 @@ import Main from './main';
 
 function mapStateToProps(state) {
     return {
-        interestList: state.interests,
-        user: state.user,
-        newsFeed: state.newsFeed
+        Feed: state.Feed,
+        User: state.User,
+        InterestedIn: state.InterestedIn,
+        LikeableStories: state.LikeableStories
     }
 }
 
