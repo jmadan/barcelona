@@ -12,22 +12,19 @@ import { Provider } from 'react-redux';
 import store, { history } from './store';
 
 require('./public/css/bootstrap.css');
+require('./public/css/barcelona.css');
+import 'font-awesome/css/font-awesome.css';
 
 import App from './components/connect';
 import Home from './components/home';
-import SignIn from './components/signin';
-import InterestGrid from './components/InterestGrid';
-import User from './components/User/User';
-import NewsFeed from './components/News/NewsFeed';
+import FeedContainer from './containers/FeedContainer';
 
 let router = (
     <Provider store={store}>
 	    <Router history={history}>
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
-				<Route path="/interest" component={InterestGrid}></Route>
-				<Route path="/feed" component={NewsFeed}></Route>
-				<Route path="/signin" component={SignIn}></Route>
+				<Route path="latest" component={FeedContainer}></Route>
 			</Route>
 		</Router>
 	</Provider>
