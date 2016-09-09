@@ -1,4 +1,4 @@
-function User(state = [], action) {
+function Feed(state = [], action) {
     console.log(state, action);
     switch (action.type) {
 
@@ -6,4 +6,4 @@ function User(state = [], action) {
     }
 }
 
-export default User;
+export default Feed;

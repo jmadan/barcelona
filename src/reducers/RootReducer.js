@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import interests from './Interests';
-import user from './User';
-import newsFeed from './NewsFeed';
+import Feed from './Feed';
+import User from './User';
+import LikeableStories from './LikeableStories';
+import InterestedIn from './InterestedIn';
 
-const rootReducer = combineReducers({ interests, user, newsFeed, routing: routerReducer });
+const rootReducer = combineReducers({ Feed, User, LikeableStories, InterestedIn, routing: routerReducer });
 
 export default rootReducer;
