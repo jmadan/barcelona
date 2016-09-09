@@ -3,6 +3,7 @@ let path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 const validate = require('webpack-validator');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const MergePlugin = require('webpack-merge');
 // let parts = require('./lib/webpack.parts');
 
@@ -20,7 +21,7 @@ let config = {
     output: {
         path: PATHS.build,
         filename: 'app.js',
-        publicPath: '/build/'
+        publicPath: 'build/'
     },
     module: {
         loaders: [{
@@ -33,30 +34,28 @@ let config = {
                     ]
                 }
             },
-            { test: /\.css$/, loader: "style!css" },
-            { test: /bootstrap.+\.(jsx|js)$/, loader: 'imports?jQuery=jquery,$=jquery,this=>window' },
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+            { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
+            { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: 'url' },
             { test: /\.png$/, loader: "url-loader?limit=100000" },
-            { test: /\.jpg$/, loader: "file-loader" },
-            { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+            { test: /\.jpg$/, loader: "file-loader" }
         ]
     },
     plugins: [
         new CleanWebpackPlugin([PATHS.build], {
             root: process.cwd()
         }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
                 // Drop `console` statements
-                drop_console: true
+                drop_console: false
             },
             mangle: false,
             beautify: true
         }),
-        new webpack.optimize.DedupePlugin()
+        new ExtractTextPlugin('bundle.css')
     ]
 };
 
