@@ -7,7 +7,7 @@ class Footer extends React.Component {
             <div className="container">
 			<footer>
 				<div className="text-center">
-					<p className="text-center">Copyright-2016 - @Manhattan</p>
+					<p className="text-center">Copyright-2016 - @Barcelona</p>
 					<SocialShare />
 				</div>
 			</footer>

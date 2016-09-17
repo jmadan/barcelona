@@ -12,6 +12,7 @@ class FeedContainer extends React.Component {
     componentDidMount() {
         //make api call here
         // this.setState({ Feed: Feed });
+        this.props.getFeedFromServer(1);
     }
 
     render() {

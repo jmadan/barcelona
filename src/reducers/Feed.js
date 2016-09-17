@@ -1,8 +1,9 @@
 function Feed(state = [], action) {
-    console.log(state, action);
     switch (action.type) {
-
-        default: return state;
+    case 'FETCHED_USER_FEED_SUCCESS':
+    	return state.concat(action.payload);
+    default:
+        return state;
     }
 }
 
