@@ -16,7 +16,7 @@ const PATHS = {
 let config = {
     devtool: 'source-map',
     entry: {
-        app: PATHS.app
+        app: ['babel-polyfill', './src/barcelona.js']
     },
     output: {
         path: PATHS.build,
@@ -35,6 +35,7 @@ let config = {
                 }
             },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
+            { test: /bootstrap.+\.(jsx|js)$/, loader: 'imports?jQuery=jquery,$=jquery,this=>window' },
             { test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: 'url' },
             { test: /\.png$/, loader: "url-loader?limit=100000" },
             { test: /\.jpg$/, loader: "file-loader" }

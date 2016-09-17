@@ -62,7 +62,7 @@ app.get('/', (req, res) => {
 app.use('/api', apiHandler);
 
 let PORT = process.env.PORT || 8080;
-server = app.listen(PORT, 'localhost', function (err) {
+app.listen(PORT, 'localhost', function (err) {
     if (err) {
         console.log(err);
         return;
