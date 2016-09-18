@@ -2,16 +2,32 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class SocialShare extends React.Component {
+    constructor(props){
+        super(props);
+    }
+    
     render() {
-        return (
+        return (<div>
             <div className="col-md-4 col-md-offset-5">
-                <ul className="list-inline">
-                    <li><i className="fa fa-twitter-square fa-2x" aria-hidden="true"></i></li>
-                	<li><i className="fa fa-google-plus-square fa-2x" aria-hidden="true"></i></li>
-                    <li><i className="fa fa-get-pocket fa-2x" aria-hidden="true"></i></li>
-                    <li><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></li>
-                </ul>    
+                <div className="bottom">
+                    <a className="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/">
+                        <i className="fa fa-twitter"></i>
+                    </a>
+                    <a className="btn btn-danger btn-sm" rel="publisher"
+                       href="https://plus.google.com/">
+                        <i className="fa fa-google-plus"></i>
+                    </a>
+                    <a className="btn btn-primary btn-sm" rel="publisher"
+                       href="https://plus.google.com/">
+                        <i className="fa fa-facebook"></i>
+                    </a>
+                    <a className="btn btn-primary btn-sm" rel="publisher"
+                       href="https://linkedin.com">
+                        <i className="fa fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
+          </div>  
         );
     }
 }

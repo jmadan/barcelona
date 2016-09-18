@@ -4,6 +4,7 @@ import NavBar from './nav';
 import Footer from './footer';
 
 class Main extends React.Component {
+	
     render() {
         return (
             <div>
