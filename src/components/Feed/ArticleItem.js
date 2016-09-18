@@ -31,8 +31,8 @@ class ArticleItem extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <LikeDislike {...this.props}/>
-                    <SocialShare />
+                    <LikeDislike id={this.props.item.storyId} />
+                    <SocialShare id={this.props.item.storyId} />
                 </div>
             
                 <div className="row divider">

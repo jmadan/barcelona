@@ -1,6 +1,8 @@
 import React from 'react';
 import ArticleItem from './ArticleItem';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'; 
+
 class FeedComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +13,7 @@ class FeedComponent extends React.Component {
             <div>
             <div className="container">
                 <div className="col-md-9">
-                    {this.props.Feed.map((f, i)=> <ArticleItem key={i} i={i} item={f} {...this.props}/>)}
+                    {Object.keys(this.props.Feed).map((key) => {return <ArticleItem key={key} i={key} item={this.props.Feed[key]} />})}
                 </div>
                 <div className="col-sm-3">
                     Right column

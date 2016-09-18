@@ -5,7 +5,7 @@ class FeedContainer extends React.Component {
     constructor() {
         super();
         // this.state = {
-        //     Feed: []
+        //     Feed: {}
         // }
     }
 
