@@ -18,8 +18,9 @@ class NavBar extends React.Component {
 				        </div>
 				        <div className="collapse navbar-collapse" id="navbar-collapse-4">
 				          <ul className="nav navbar-nav navbar-right">
-				            <li><Link to="/">Home</Link></li>
-				            <li><Link to="/latest">Latest</Link></li>
+				            <li><Link to="/"><i className="fa fa-home" aria-hidden="true"></i> Home</Link></li>
+				            <li><Link to="/latest"><i className="fa fa-newspaper-o" aria-hidden="true"></i> Latest</Link></li>
+				            <li><Link to="/user"><i className="fa fa-shield" aria-hidden="true"></i> MyAccount</Link></li>
 				          </ul>
 				        </div>
 				      </div>
