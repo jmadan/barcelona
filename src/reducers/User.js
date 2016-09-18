@@ -1,9 +1,5 @@
 function User(state = [], action) {
-    console.log(state, action);
-    switch (action.type) {
-
-        default: return state;
-    }
+    return state;
 }
 
 export default User;

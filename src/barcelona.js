@@ -18,6 +18,7 @@ import 'font-awesome/css/font-awesome.css';
 import App from './components/connect';
 import Home from './components/home';
 import FeedContainer from './containers/FeedContainer';
+import UserContainer from './containers/UserContainer';
 
 let router = (
     <Provider store={store}>
@@ -25,6 +26,7 @@ let router = (
 			<Route path="/" component={App}>
 				<IndexRoute component={Home}></IndexRoute>
 				<Route path="latest" component={FeedContainer}></Route>
+				<Route path="user" component={UserContainer}></Route>
 			</Route>
 		</Router>
 	</Provider>
